@@ -1,0 +1,18 @@
+language: generic
+
+python:
+  - 2.7
+
+dist: trusty
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - shellcheck
+
+script:
+  - ./ci.sh
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
