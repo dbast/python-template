@@ -4,10 +4,12 @@
 
 # prefer setuptools over distutils
 from setuptools import setup
+import versioneer
 
 setup(
     name='python-template',
-    version='0.0.1',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Starting point for Python projects',
     url='https://github.com/dbast/python-template',
     author='Daniel Bast',
