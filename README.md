@@ -6,7 +6,7 @@ Python Template
 
 Yet another Python template to start python projects.
 
-Integrates: pytest, pylint, coverage, pymock
+Integrates: pytest, pylint, coverage, pymock, versioneer, editorconfig
 
 Does not use tox, instead virtualenv and later conda are used.
 
