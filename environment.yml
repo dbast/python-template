@@ -1,0 +1,17 @@
+channels:
+  - conda-forge
+
+dependencies:
+  - python
+  - pylint
+  - pytest
+  - pytest-cov
+  - pytest-pylint
+  - pytest-runner
+  - coverage
+  - mock
+  - boto3
+  - smart_open
+  - pandas
+  - pyspark
+  - jupyterlab

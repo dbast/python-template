@@ -2,8 +2,6 @@
 
 set -o errtrace -o nounset -o pipefail -o errexit
 
-DEFAULT_ENV_LOCATION=".venv"
-
 # Goto directory of this script
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
@@ -20,20 +18,11 @@ self_check () {
 setup () {
   echo "############################################"
   echo "#                                          #"
-  echo "#        Setup environment                 #"
+  echo "#        Environment setup                 #"
   echo "#                                          #"
   echo "############################################"
-  if [[ ! -z ${VIRTUAL_ENV:-} ]]; then
-    echo "Started inside virtualenv, exiting."
-    exit 1
-  fi
-
-  rm -rf "${DEFAULT_ENV_LOCATION}"
-  virtualenv "${DEFAULT_ENV_LOCATION}"
-  set +o nounset
-  # shellcheck source=/dev/null
-  source "${DEFAULT_ENV_LOCATION}/bin/activate"
-  set -o nounset
+  conda info -a || true
+  pip list --format=columns
 }
 
 unit_tests () {
